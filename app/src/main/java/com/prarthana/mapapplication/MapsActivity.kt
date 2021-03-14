@@ -84,6 +84,8 @@ class MapsActivity : AppCompatActivity(),
                         .title("Pandav Leni")
                         .snippet("Historical landmark in Nashik, Maharashtra")
         )
+        mMap.setInfoWindowAdapter(MyInfoWindowAdapter(this))
+
 
         mMap.addPolyline(
                 PolylineOptions()
@@ -153,4 +155,9 @@ class MapsActivity : AppCompatActivity(),
     override fun onInfoWindowClick(p0: Marker?) {
         Toast.makeText(this,"The Nasik Caves, or sometimes Pandavleni Caves, are a group of 23 caves carved between the 1st century BCE and the 3rd century CE, though additional sculptures were added up to about the 6th century, reflecting changes in Buddhist devotional practices mainly.",Toast.LENGTH_LONG).show();
     }
+
+//    override fun onMapReady(googleMap: GoogleMap){
+//        mMap = googleMap
+//        mMap.setInfoWindowAdapter(MyInfoWindowAdapter(this))
+//    }
 }
