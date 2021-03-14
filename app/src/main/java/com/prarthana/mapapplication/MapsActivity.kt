@@ -75,6 +75,7 @@ class MapsActivity : AppCompatActivity(),
                         .position(m1)
                         .title("Nimani Bus Stand")
                         .snippet("Panchavati")
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.googleg_standard_color_18))
         )
 
         markerTwo = googleMap.addMarker(
