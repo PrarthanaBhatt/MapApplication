@@ -1,8 +1,12 @@
 package com.prarthana.mapapplication
 
+import android.content.Context
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -69,20 +73,25 @@ class MapsActivity : AppCompatActivity(),
                 .build()              // Creates a CameraPosition from the builder
         googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
 
+
+
+
         // Add some markers to the map, and add a data object to each marker.
         markerOne = googleMap.addMarker(
                 MarkerOptions()
                         .position(m1)
                         .title("Nimani Bus Stand")
                         .snippet("Panchavati")
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.googleg_standard_color_18))
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.bus))
         )
+
 
         markerTwo = googleMap.addMarker(
                 MarkerOptions()
                         .position(m4)
                         .title("Pandav Leni")
                         .snippet("Historical landmark in Nashik, Maharashtra")
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
         )
         mMap.setInfoWindowAdapter(MyInfoWindowAdapter(this))
 
